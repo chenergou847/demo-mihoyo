@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>作品集 · 《原神》线上玩家反馈监测与迭代建议 — 陈若玉风</title>
+<style>
+:root{--ink:#0a0a0a;--bg:#fafafa;--card:#fff;--muted:#6b7280;--line:#e5e7eb;
+--accent:#1d4ed8;--warn:#b45309;--good:#15803d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,sans-serif;
+font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:48px 24px 96px}
+header.hero{border-bottom:2px solid var(--ink);padding-bottom:24px;margin-bottom:40px}
+h1{font-size:34px;line-height:1.25;margin:0 0 8px;letter-spacing:-.5px}
+.sub{color:var(--muted);font-size:15px;margin:0}
+.tagline{font-size:19px;font-weight:600;margin:20px 0 0;max-width:65ch}
+h2{font-size:23px;margin:56px 0 8px;padding-top:8px;letter-spacing:-.3px}
+h2 .n{color:var(--accent);font-size:15px;font-weight:700;display:block;margin-bottom:4px;letter-spacing:1px}
+h3{font-size:17px;margin:28px 0 8px}
+p{margin:10px 0;max-width:65ch}
+ul{margin:10px 0;padding-left:22px;max-width:70ch}
+li{margin:5px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin:16px 0;
+box-shadow:0 1px 2px rgba(10,10,10,.04)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.kv{font-size:28px;font-weight:700;line-height:1.2;letter-spacing:-1px}
+.kl{font-size:13px;color:var(--muted);margin-top:2px}
+.ks{font-size:12px;color:var(--muted);margin-top:6px}
+table{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12.5px;color:var(--muted);font-weight:600;text-transform:none}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.row{display:grid;grid-template-columns:minmax(150px,240px) 1fr 168px;gap:12px;align-items:center;margin:7px 0}
+.rlabel{font-size:13.5px;line-height:1.35}
+.rtrack{background:#eef0f3;border-radius:6px;height:16px;overflow:hidden}
+.rfill{height:100%;background:var(--accent);border-radius:6px}
+.rnum{font-size:12.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.badge{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);
+background:#f6f7f9;white-space:nowrap}
+.b-现在做{background:#e8f5ec;border-color:#b7e0c4;color:var(--good)}
+.b-先验证{background:#eef2ff;border-color:#c7d2fe;color:var(--accent)}
+.b-先研究{background:#fff7e6;border-color:#fde68a;color:var(--warn)}
+.b-暂缓,.b-不建议做{background:#f4f4f5;border-color:#e4e4e7;color:var(--muted)}
+.b-需升级决策{background:#fdf2f8;border-color:#fbcfe8;color:#9d174d}
+.finding{border-left:3px solid var(--accent);padding:2px 0 2px 18px;margin:22px 0}
+.finding h3{margin-top:0}
+.four{font-size:13.5px;color:var(--muted);margin-top:8px}
+.four b{color:var(--ink)}
+.warn{border-left:3px solid var(--warn);background:#fffdf7;padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0}
+footer{margin-top:64px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+code{background:#f1f2f4;padding:1px 6px;border-radius:5px;font-size:13px}
+@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}
+.row{grid-template-columns:1fr;gap:3px}.rnum{text-align:left}}
+@page{size:A4;margin:13mm 12mm}
+@media print{
+  body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .wrap{max-width:none;padding:0}
+  .card{box-shadow:none;break-inside:avoid}
+  h2{break-after:avoid}
+  .finding,.warn,.kpi{break-inside:avoid}
+  table{break-inside:auto}
+  tr{break-inside:avoid}
+  .row{break-inside:avoid}
+}
+</style></head><body><div class="wrap">
+<header class="hero">
+<h1>《原神》线上玩家反馈监测与迭代建议</h1>
+<p class="sub">个人研究作品 · 陈若玉风 · 2026-10-06 · 数据窗口 2026-08-01 ~ 2026-10-06</p>
+<p class="tagline">用 402 条真实玩家评论，回答一个问题：<b>当前版本最该改的是什么</b>——并证明「声量最大的问题，不一定是该优先改的问题」。</p>
+</header>
+<h2><span class="n">01</span>这份研究要支撑的决策</h2>
+<div class="card"><ul><li>当前版本玩家最集中不满、最认可的是什么？<b>（用于排下一版迭代优先级）</b></li><li>这些反馈落在系统设计 / 角色养成 / 活动玩法 / 预期沟通哪一类？<b>（判断该由谁接）</b></li><li>哪些是情绪表达、哪些是真实体验问题？<b>（判断能否直接转成需求）</b></li></ul></div>
+<h2><span class="n">02</span>样本与口径</h2>
+<div class="kpis">
+<div class="kpi"><div class="kv">402</div><div class="kl">条观察</div><div class="ks">全部完成主题编码</div></div>
+<div class="kpi"><div class="kv">395</div><div class="kl">名去重用户</div><div class="ks">按用户计频次，不按条数</div></div>
+<div class="kpi"><div class="kv">141</div><div class="kl">个来源视频</div><div class="ks">按评论数排序取样</div></div>
+<div class="kpi"><div class="kv">36.7%</div><div class="kl">发言不构成产品反馈</div><div class="ks">已剥离，不进结论</div></div>
+</div>
+<div class="card"><table><tr><th>项</th><th>口径</th></tr><tr><td>时间窗</td><td>2026-08-01 ~ 2026-10-06</td></tr><tr><td>平台</td><td>B站（视频与评论区）</td></tr><tr><td>采集方式</td><td>公开接口、无登录、只读；请求间固定延时 1.2–1.6 秒</td></tr><tr><td>排除</td><td>短于 6 字评论 11 条；<b>早于口径窗口 97 条</b>（热门评论长期居榜首，已显式记账）</td></tr><tr><td>去重</td><td>同一用户对同一主题的多次表达只计 1 次</td></tr><tr><td>证据分级</td><td>behavior（描述实际行为）&gt; artifact &gt; stated（只是说）；本数据 behavior 49 / stated 352 / artifact 1</td></tr><tr><td>能判断分群的行数</td><td>52 / 402（13%）——不足，故未做完整画像</td></tr></table></div>
+<h2><span class="n">03</span>样本构成：先剥离噪声，再谈结论</h2>
+<div class="card">
+<p>402 条发言里，<b>145 名用户（36.7%）说的不是产品反馈</b>——玩梗、纯情绪、剧情闲聊、其他游戏话题或代肝账号交易。这部分单列剥离，不计入产品结论；<b>所有比例的分母是有效反馈用户 251 人，不是 395</b>。</p>
+<table><tr><th>非反馈类别</th><th class="num">用户数</th><th class="num">条数</th></tr><tr><td>玩梗与纯情绪</td><td class="num">99</td><td class="num">99</td></tr>
+<tr><td>信息分享与结论转述</td><td class="num">17</td><td class="num">18</td></tr>
+<tr><td>剧情与角色闲聊</td><td class="num">10</td><td class="num">10</td></tr>
+<tr><td>其他游戏与无关话题</td><td class="num">10</td><td class="num">10</td></tr>
+<tr><td>代肝与账号交易</td><td class="num">9</td><td class="num">9</td></tr></table>
+</div>
+<h2><span class="n">04</span>主题频次 × 严重度</h2>
+<p>17 个产品主题，按去重用户数降序；严重度是逐条阅读文本后打的 1–5 分均值（与点赞曝光无关）。</p>
+<div class="card"><div class="row"><div class="rlabel">强度膨胀与版本平衡焦虑</div><div class="rtrack"><div class="rfill" style="width:100.0%"></div></div><div class="rnum">51 人 · 严重度 2.17</div></div>
+<div class="row"><div class="rlabel">深渊与高难副本的难度梯度/体系门槛</div><div class="rtrack"><div class="rfill" style="width:52.9%"></div></div><div class="rnum">27 人 · 严重度 2.78</div></div>
+<div class="row"><div class="rlabel">内容生态与攻略质量</div><div class="rtrack"><div class="rfill" style="width:45.1%"></div></div><div class="rnum">23 人 · 严重度 2.54</div></div>
+<div class="row"><div class="rlabel">新手与回坑玩家的上手困惑</div><div class="rtrack"><div class="rfill" style="width:43.1%"></div></div><div class="rnum">22 人 · 严重度 2.41</div></div>
+<div class="row"><div class="rlabel">社区氛围与玩家对立</div><div class="rtrack"><div class="rfill" style="width:27.5%"></div></div><div class="rnum">14 人 · 严重度 2.57</div></div>
+<div class="row"><div class="rlabel">抽卡资源获取与卡池福利体验</div><div class="rtrack"><div class="rfill" style="width:27.5%"></div></div><div class="rnum">14 人 · 严重度 2.36</div></div>
+<div class="row"><div class="rlabel">角色养成资源与时间成本</div><div class="rtrack"><div class="rfill" style="width:27.5%"></div></div><div class="rnum">14 人 · 严重度 3.43</div></div>
+<div class="row"><div class="rlabel">剧情与任务流程体验</div><div class="rtrack"><div class="rfill" style="width:25.5%"></div></div><div class="rnum">13 人 · 严重度 3.38</div></div>
+<div class="row"><div class="rlabel">角色机制完整性与配队自由度</div><div class="rtrack"><div class="rfill" style="width:23.5%"></div></div><div class="rnum">12 人 · 严重度 2.83</div></div>
+<div class="row"><div class="rlabel">奖励发放与投入/期望落差</div><div class="rtrack"><div class="rfill" style="width:21.6%"></div></div><div class="rnum">11 人 · 严重度 2.82</div></div>
+<div class="row"><div class="rlabel">活动玩法设计与关卡体验</div><div class="rtrack"><div class="rfill" style="width:19.6%"></div></div><div class="rnum">10 人 · 严重度 3.10</div></div>
+<div class="row"><div class="rlabel">深渊11层镇石机制与怪物集火</div><div class="rtrack"><div class="rfill" style="width:17.6%"></div></div><div class="rnum">9 人 · 严重度 3.89</div></div>
+<div class="row"><div class="rlabel">自选五星活动的选择决策</div><div class="rtrack"><div class="rfill" style="width:17.6%"></div></div><div class="rnum">9 人 · 严重度 1.82</div></div>
+<div class="row"><div class="rlabel">大世界探索与跑图机动性</div><div class="rtrack"><div class="rfill" style="width:15.7%"></div></div><div class="rnum">8 人 · 严重度 2.12</div></div>
+<div class="row"><div class="rlabel">移动端操作与设备适配</div><div class="rtrack"><div class="rfill" style="width:11.8%"></div></div><div class="rnum">6 人 · 严重度 3.83</div></div>
+<div class="row"><div class="rlabel">运营沟通与反馈采纳</div><div class="rtrack"><div class="rfill" style="width:9.8%"></div></div><div class="rnum">5 人 · 严重度 2.40</div></div>
+<div class="row"><div class="rlabel">美术建模与演出表现</div><div class="rtrack"><div class="rfill" style="width:7.8%"></div></div><div class="rnum">4 人 · 严重度 2.00</div></div></div>
+<h2><span class="n">05</span>三个关键发现</h2>
+<div class="finding"><h3>① 声量 ≠ 严重度，而且方向相反</h3><p>「强度膨胀与版本平衡焦虑」是声量最大的主题（<b>51 人</b>），但严重度只有 <b>2.17</b>、无人给 5 分，行为证据只有 3 条——玩家表达的是<b>预期与不确定感</b>，不是一个可修复的缺陷。而「深渊11层镇石机制与怪物集火」只有 9 人提及，严重度却达 <b>3.89（全表最高）</b>，7 人给到 4 分以上。</p><p class="four"><b>含义：</b>按声量排 P0，会把开发资源投给一个「沟通就能缓解」的问题，而把真正的机制缺陷压后。</p></div>
+<div class="finding"><h3>② 高难内容的拦阻点是「账号里没有当期体系角色」，不是操作水平</h3><p>27 人讨论高难副本难度梯度/体系门槛，其中 <b>14 人（51.9%）给出了行为证据</b>——放弃、失败、降档通关，为全表行为证据占比最高；其中回坑 4 名、萌新 2 名。</p><p class="four"><b>含义：</b>这不是口头抱怨，是<b>已经发生的流失动作</b>；玩家要的不是调低难度，而是<b>分层</b>——低档拿满奖励、高档留给硬核。</p></div>
+<div class="finding"><h3>③ 接近一半的「玩家声音」其实不是需求</h3><p>145 名用户（36.7%）的发言是玩梗与情绪。如果直接把这些当反馈汇总，会把<b>传播热度误当成玩家诉求</b>。</p><p class="four"><b>含义：</b>反馈分析的第一步不是分类，是<b>先把噪声剥离并如实披露比例</b>。</p></div>
+<h2><span class="n">06</span>迭代建议（含决策状态）</h2>
+<p>决策状态六选一，不允许「建议关注」这类模糊表述；每条都附最小下一步与复核条件（完整版见 Markdown 报告）。</p>
+<div class="card"><table><tr><th class="num">#</th><th>建议</th><th>类型</th><th class="num">优先级</th><th>决策状态</th></tr><tr><td class="num">1</td><td>深渊镇石机制修复：评估怪物仇恨权重 / 镇石耐久 / 下半波次密度三者中成本最低的一种</td><td>系统设计</td><td class="num">P0</td><td><span class="badge b-先验证">先验证</span></td></tr>
+<tr><td class="num">2</td><td>把「低金可通关」路径前置：官方或合作创作者的低配解法、机制提示放到进入关卡之前</td><td>预期沟通 + 活动设计</td><td class="num">P0</td><td><span class="badge b-现在做">现在做</span></td></tr>
+<tr><td class="num">3</td><td>面向回坑/萌新的「当前版本该做什么」清单：按周目标组织，而非按功能罗列</td><td>活动 / 内容运营</td><td class="num">P0</td><td><span class="badge b-现在做">现在做</span></td></tr>
+<tr><td class="num">4</td><td>降低圣遗物养成的随机成本（定向词条 / 保底），而非简单增加体力产出</td><td>角色养成</td><td class="num">P1</td><td><span class="badge b-先研究">先研究</span></td></tr>
+<tr><td class="num">5</td><td>与创作者生态共建机制准确性：提供一手机制说明，鼓励验证类攻略</td><td>内容生态</td><td class="num">P1</td><td><span class="badge b-现在做">现在做</span></td></tr>
+<tr><td class="num">6</td><td>合并活动任务中的重复战斗</td><td>活动玩法</td><td class="num">P1</td><td><span class="badge b-先验证">先验证</span></td></tr>
+<tr><td class="num">7</td><td>移动端高难内容的操作容错（判定窗口、误触处理）</td><td>系统设计</td><td class="num">P1</td><td><span class="badge b-先验证">先验证</span></td></tr>
+<tr><td class="num">8</td><td>建立可见的反馈闭环清单：定期公布「已采纳 / 在评估 / 暂不做」</td><td>运营沟通</td><td class="num">P2</td><td><span class="badge b-现在做">现在做</span></td></tr>
+<tr><td class="num">9</td><td>强度焦虑按沟通项处理，不做数值改动</td><td>预期沟通</td><td class="num">P2</td><td><span class="badge b-不建议做">不建议做</span></td></tr>
+<tr><td class="num">10</td><td>抽卡资源与卡池福利节奏</td><td>商业化</td><td class="num">—</td><td><span class="badge b-需升级决策">需升级决策</span></td></tr>
+<tr><td class="num">11</td><td>大世界跑图机动性、美术建模与演出</td><td>体验优化</td><td class="num">P3</td><td><span class="badge b-暂缓">暂缓</span></td></tr>
+<tr><td class="num">12</td><td>自选五星活动的选取指引（注意：该主题有刷屏，规模被高估）</td><td>活动设计</td><td class="num">P3</td><td><span class="badge b-暂缓">暂缓</span></td></tr></table></div>
+<h2><span class="n">07</span>这份研究不能证明什么（局限声明）</h2>
+<div class="warn"><ul><li><b>单一平台</b>：仅 B站，未覆盖米游社等日常向社区。</li><li><b>只能拿到热门评论</b>：匿名访问下每条视频仅开放约 3 条热门评论（接口 <code>is_end=True</code> 而 <code>all_count</code> 数千），样本偏<b>高赞、高共识、易传播</b>，<b>不代表评论区全量分布，更不能代表全体玩家比例</b>。</li><li><b>样本结构受关键词影响</b>：例如「深渊 11 层镇石」9 条全部来自「深境螺旋」关键词。</li><li><b>无游戏内行为数据</b>：无法交叉验证「说的」与「做的」。</li><li><b>单期快照</b>：部分主题集中在同一期内容（镇石机制集中在 2026-09-16 深渊更新前后 3 天内），不能推断为长期趋势。</li><li><b>不做机会规模测算</b>：没有 DAU/留存/关卡通过率，凭社区样本推算「影响多少万用户」是伪精确，因此只给相对严重度与受影响人数。</li></ul></div>
+<h2><span class="n">08</span>质检记录（可复核）</h2>
+<div class="card"><table><tr><th>检查项</th><th>结果</th></tr><tr><td>编码行数 = 原始行数</td><td>402 = 402 ✅</td></tr><tr><td>列名与 schema 完全一致</td><td>✅</td></tr><tr><td>theme 覆盖率</td><td>402 / 402（无法归类 0 条）✅</td></tr><tr><td>引用逐字（全量机检）</td><td>402 / 402 通过 ✅</td></tr><tr><td>独立抽样复核（另写脚本，40 条）</td><td>0 失败 ✅</td></tr><tr><td>口径窗口外泄漏</td><td>0 条（97 条已排除并记账）✅</td></tr><tr><td>隐私（昵称 / mid / UID）</td><td>采集与编码数据中均不存在 ✅</td></tr><tr><td>量级交叉核验（机械探针）</td><td>全部主题 ≤ 探针上界；1 处标注待复核（「强度膨胀」51 人 vs 探针 44，因主题定义较宽）⚠️</td></tr></table></div>
+<h2><span class="n">09</span>配套作品：《原神》预研玩法小样本玩家测试（方案）</h2>
+<div class="card"><p>用于验证本报告无法回答的问题：<b>行为</b>层面的体验断裂点。</p><ul><li>样本：6–10 人配额抽样（萌新 2 / 中度 4 / 硬核 2 / 休闲 2），避免样本全是同水平玩家</li><li>三个待验证假设：高难门槛来自队伍完整度而非数值；休闲与硬核对难度分级的诉求方向相反；不满常来自预期管理而非难度本身</li><li>产出：测试方案 + 原始记录 + 主题编码 + 3–5 条带优先级的建议</li><li>纪律：小样本一律标注"探索性"；至少允许一个假设被推翻，否则说明测试设计太软</li></ul></div>
+<footer><p><b>可复现性</b>：采集脚本 <code>采集脚本/collect_bilibili.py</code>；原始数据 <code>原始数据/bilibili_windowed_20261006.csv</code>；编码结果 <code>编码/observations_coded.csv</code>；独立复核 <code>质检/crosscheck_themes.py</code>。</p><p>本文数字由脚本在生成时直接从编码数据计算（非手抄），本页不依赖任何外部 CDN、图片或字体资源，可离线打开与投递。</p><p>个人研究作品，不代表米哈游或任何官方立场。</p></footer>
+</div></body></html>

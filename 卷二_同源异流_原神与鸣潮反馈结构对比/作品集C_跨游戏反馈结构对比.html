@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>跨游戏玩家反馈结构对比 · 《原神》×《鸣潮》 — 陈若玉风</title>
+<style>
+:root{--ink:#0a0a0a;--bg:#fafafa;--card:#fff;--muted:#6b7280;--line:#e5e7eb;--accent:#1d4ed8;--warn:#b45309;--good:#15803d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",system-ui,sans-serif;font-size:16px;line-height:1.7}
+.wrap{max-width:1000px;margin:0 auto;padding:48px 24px 96px}
+header.hero{border-bottom:2px solid var(--ink);padding-bottom:22px;margin-bottom:36px}
+h1{font-size:32px;line-height:1.25;margin:0 0 8px;letter-spacing:-.5px}
+.sub{color:var(--muted);font-size:15px;margin:0}
+.tagline{font-size:18px;font-weight:600;margin:18px 0 0;max-width:66ch}
+h2{font-size:22px;margin:52px 0 8px;letter-spacing:-.3px}
+h2 .n{color:var(--accent);font-size:14px;font-weight:700;display:block;margin-bottom:4px;letter-spacing:1px}
+h3{font-size:17px;margin:24px 0 6px}
+p{margin:10px 0;max-width:68ch}
+ul{margin:10px 0;padding-left:22px;max-width:72ch}li{margin:5px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:16px 0;box-shadow:0 1px 2px rgba(10,10,10,.04)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.kv{font-size:26px;font-weight:700;line-height:1.2;letter-spacing:-1px}
+.kl{font-size:13px;color:var(--muted);margin-top:2px}
+.ks{font-size:12px;color:var(--muted);margin-top:6px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0}
+th,td{text-align:left;padding:8px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12.5px;color:var(--muted);font-weight:600}
+.row{display:grid;grid-template-columns:minmax(150px,230px) 1fr 150px;gap:12px;align-items:center;margin:7px 0}
+.rl{font-size:13.5px;line-height:1.35}
+.rt{background:#eef0f3;border-radius:6px;height:16px;overflow:hidden}
+.rf{height:100%;background:var(--accent);border-radius:6px}
+.rn{font-size:12.5px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.finding{border-left:3px solid var(--accent);padding:2px 0 2px 18px;margin:20px 0}
+.finding h3{margin-top:0}
+.warn{border-left:3px solid var(--warn);background:#fffdf7;padding:14px 18px;border-radius:0 10px 10px 0;margin:18px 0}
+footer{margin-top:60px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+code{background:#f1f2f4;padding:1px 6px;border-radius:5px;font-size:13px}
+@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}.row{grid-template-columns:1fr;gap:3px}.rn{text-align:left}}
+@page{size:A4;margin:13mm 12mm}
+@media print{body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.wrap{max-width:none;padding:0}.card{box-shadow:none;break-inside:avoid}
+h2{break-after:avoid}.finding,.warn,.kpi,.row{break-inside:avoid}tr{break-inside:avoid}}
+</style></head><body><div class="wrap">
+<header class="hero"><h1>《原神》 × 《鸣潮》<br>玩家反馈结构对比</h1>
+<p class="sub">个人研究作品 · 陈若玉风 · 2026-10-06 · 同平台（B站）同时间窗（2026-08-01 ~ 2026-10-06）</p>
+<p class="tagline">把同一个产品上跑通的分析口径，原样迁移到第二个产品——检验两件事：<b>方法能不能迁移</b>，以及<b>哪些玩家诉求是品类共性、哪些是产品特异</b>。</p></header>
+<h2><span class="n">01</span>可比性条件（六条必须同时成立）</h2>
+<div class="card"><table><tr><th>条件</th><th>本项目取值</th></tr><tr><td>同平台</td><td>均为 B站（视频 + 评论区）</td></tr><tr><td>同时间窗</td><td>均为 2026-08-01 ~ 2026-10-06</td></tr><tr><td>同关键词结构</td><td>2 个该游戏专有系统词 + 4 个通用诉求词</td></tr><tr><td>同采集参数</td><td>每关键词 3 页搜索、按评论数取前 170 视频、每视频至多 20 条（匿名实际≈3 条热门）</td></tr><tr><td>同编码纪律</td><td>锚定编码（见 03）；引用逐字；按去重用户计频次；行为证据与口头表达分开</td></tr><tr><td>同指标</td><td>结构占比、严重度均值、行为证据占比、非反馈占比</td></tr></table></div>
+<div class="warn"><p><b>只比结构占比，不比绝对量。</b>两个社区体量不同，「谁的抱怨更多」是伪结论；本文所有比例的分母是各游戏的<b>有效反馈用户数</b>。</p></div>
+<h2><span class="n">02</span>两个样本</h2>
+<div class="kpis">
+<div class="kpi"><div class="kv">402</div><div class="kl">《原神》 观察条数</div><div class="ks">395 名去重用户</div></div>
+<div class="kpi"><div class="kv">353</div><div class="kl">《鸣潮》 观察条数</div><div class="ks">347 名去重用户</div></div>
+<div class="kpi"><div class="kv">15</div><div class="kl">共有主题数</div><div class="ks">占各自主题数 88% / 75%</div></div>
+<div class="kpi"><div class="kv">36.7% / 28.5%</div><div class="kl">非反馈发言占比</div><div class="ks">两边都约一半</div></div>
+</div>
+<div class="card"><table><tr><th>项</th><th>《原神》</th><th>《鸣潮》</th></tr><tr><td>观察条数</td><td>402</td><td>353</td></tr><tr><td>去重用户</td><td>395</td><td>347</td></tr><tr><td>有效反馈用户（分母）</td><td><b>251</b></td><td><b>248</b></td></tr><tr><td>来源视频</td><td>141</td><td>121</td></tr><tr><td>非反馈用户</td><td>145（36.7%）</td><td>99（28.5%）</td></tr><tr><td>产品主题数</td><td>17</td><td>20</td></tr></table></div>
+<h2><span class="n">03</span>共用主题的结构对比</h2>
+<p>两边用<b>同一套锚点主题</b>编码（鸣潮侧能落入锚点的直接复用同名主题），因此下表可直接横读；结构差为鸣潮占比减原神占比（百分点）。</p>
+<div class="card"><table><tr><th>主题</th><th>《原神》 占比</th><th>严重度</th><th>《鸣潮》 占比</th><th>严重度</th><th>《原神》 行为证据</th><th>《鸣潮》 行为证据</th><th>结构差(pp)</th></tr><tr><td>强度膨胀与版本平衡焦虑</td><td>20.3%</td><td>2.17</td><td>11.7%</td><td>2.31</td><td>6%</td><td>7%</td><td>-8.6</td></tr><tr><td>内容生态与攻略质量</td><td>9.2%</td><td>2.54</td><td>8.9%</td><td>2.04</td><td>4%</td><td>4%</td><td>-0.3</td></tr><tr><td>抽卡资源获取与卡池福利体验</td><td>5.6%</td><td>2.36</td><td>11.3%</td><td>2.43</td><td>36%</td><td>32%</td><td>+5.7</td></tr><tr><td>社区氛围与玩家对立</td><td>5.6%</td><td>2.57</td><td>11.3%</td><td>2.25</td><td>7%</td><td>0%</td><td>+5.7</td></tr><tr><td>深渊与高难副本的难度梯度/体系门槛</td><td>10.8%</td><td>2.78</td><td>4.8%</td><td>3.17</td><td>52%</td><td>75%</td><td>-5.9</td></tr><tr><td>角色养成资源与时间成本</td><td>5.6%</td><td>3.43</td><td>8.1%</td><td>2.62</td><td>29%</td><td>24%</td><td>+2.5</td></tr><tr><td>角色机制完整性与配队自由度</td><td>4.8%</td><td>2.83</td><td>7.7%</td><td>2.05</td><td>8%</td><td>11%</td><td>+2.9</td></tr><tr><td>新手与回坑玩家的上手困惑</td><td>8.8%</td><td>2.41</td><td>3.6%</td><td>3.56</td><td>14%</td><td>67%</td><td>-5.1</td></tr><tr><td>活动玩法设计与关卡体验</td><td>4.0%</td><td>3.10</td><td>4.8%</td><td>1.92</td><td>20%</td><td>0%</td><td>+0.9</td></tr><tr><td>剧情与任务流程体验</td><td>5.2%</td><td>3.38</td><td>2.8%</td><td>2.43</td><td>23%</td><td>14%</td><td>-2.4</td></tr><tr><td>大世界探索与跑图机动性</td><td>3.2%</td><td>2.12</td><td>2.8%</td><td>1.86</td><td>25%</td><td>14%</td><td>-0.4</td></tr><tr><td>奖励发放与投入/期望落差</td><td>4.4%</td><td>2.82</td><td>1.2%</td><td>2.67</td><td>27%</td><td>0%</td><td>-3.2</td></tr><tr><td>移动端操作与设备适配</td><td>2.4%</td><td>3.83</td><td>2.4%</td><td>2.17</td><td>33%</td><td>17%</td><td>+0.0</td></tr><tr><td>美术建模与演出表现</td><td>1.6%</td><td>2.00</td><td>2.0%</td><td>1.80</td><td>0%</td><td>0%</td><td>+0.4</td></tr><tr><td>运营沟通与反馈采纳</td><td>2.0%</td><td>2.40</td><td>1.2%</td><td>3.67</td><td>40%</td><td>67%</td><td>-0.8</td></tr></table></div>
+<h2><span class="n">04</span>各自主题结构（前 12）</h2>
+<div class="card"><h3>《原神》</h3><div class="row"><div class="rl">强度膨胀与版本平衡焦虑</div><div class="rt"><div class="rf" style="width:100.0%"></div></div><div class="rn">20.3% · 严重度 2.17</div></div>
+<div class="row"><div class="rl">深渊与高难副本的难度梯度/体系门槛</div><div class="rt"><div class="rf" style="width:52.9%"></div></div><div class="rn">10.8% · 严重度 2.78</div></div>
+<div class="row"><div class="rl">内容生态与攻略质量</div><div class="rt"><div class="rf" style="width:45.1%"></div></div><div class="rn">9.2% · 严重度 2.54</div></div>
+<div class="row"><div class="rl">新手与回坑玩家的上手困惑</div><div class="rt"><div class="rf" style="width:43.1%"></div></div><div class="rn">8.8% · 严重度 2.41</div></div>
+<div class="row"><div class="rl">社区氛围与玩家对立</div><div class="rt"><div class="rf" style="width:27.5%"></div></div><div class="rn">5.6% · 严重度 2.57</div></div>
+<div class="row"><div class="rl">抽卡资源获取与卡池福利体验</div><div class="rt"><div class="rf" style="width:27.5%"></div></div><div class="rn">5.6% · 严重度 2.36</div></div>
+<div class="row"><div class="rl">角色养成资源与时间成本</div><div class="rt"><div class="rf" style="width:27.5%"></div></div><div class="rn">5.6% · 严重度 3.43</div></div>
+<div class="row"><div class="rl">剧情与任务流程体验</div><div class="rt"><div class="rf" style="width:25.5%"></div></div><div class="rn">5.2% · 严重度 3.38</div></div>
+<div class="row"><div class="rl">角色机制完整性与配队自由度</div><div class="rt"><div class="rf" style="width:23.5%"></div></div><div class="rn">4.8% · 严重度 2.83</div></div>
+<div class="row"><div class="rl">奖励发放与投入/期望落差</div><div class="rt"><div class="rf" style="width:21.6%"></div></div><div class="rn">4.4% · 严重度 2.82</div></div>
+<div class="row"><div class="rl">活动玩法设计与关卡体验</div><div class="rt"><div class="rf" style="width:19.6%"></div></div><div class="rn">4.0% · 严重度 3.10</div></div>
+<div class="row"><div class="rl">深渊11层镇石机制与怪物集火</div><div class="rt"><div class="rf" style="width:17.6%"></div></div><div class="rn">3.6% · 严重度 3.89</div></div></div>
+<div class="card"><h3>《鸣潮》</h3><div class="row"><div class="rl">强度膨胀与版本平衡焦虑</div><div class="rt"><div class="rf" style="width:100.0%"></div></div><div class="rn">11.7% · 严重度 2.31</div></div>
+<div class="row"><div class="rl">抽卡资源获取与卡池福利体验</div><div class="rt"><div class="rf" style="width:96.6%"></div></div><div class="rn">11.3% · 严重度 2.43</div></div>
+<div class="row"><div class="rl">社区氛围与玩家对立</div><div class="rt"><div class="rf" style="width:96.6%"></div></div><div class="rn">11.3% · 严重度 2.25</div></div>
+<div class="row"><div class="rl">内容生态与攻略质量</div><div class="rt"><div class="rf" style="width:75.9%"></div></div><div class="rn">8.9% · 严重度 2.04</div></div>
+<div class="row"><div class="rl">角色养成资源与时间成本</div><div class="rt"><div class="rf" style="width:69.0%"></div></div><div class="rn">8.1% · 严重度 2.62</div></div>
+<div class="row"><div class="rl">角色机制完整性与配队自由度</div><div class="rt"><div class="rf" style="width:65.5%"></div></div><div class="rn">7.7% · 严重度 2.05</div></div>
+<div class="row"><div class="rl">活动玩法设计与关卡体验</div><div class="rt"><div class="rf" style="width:41.4%"></div></div><div class="rn">4.8% · 严重度 1.92</div></div>
+<div class="row"><div class="rl">深渊与高难副本的难度梯度/体系门槛</div><div class="rt"><div class="rf" style="width:41.4%"></div></div><div class="rn">4.8% · 严重度 3.17</div></div>
+<div class="row"><div class="rl">★累充阶梯与付费定价争议</div><div class="rt"><div class="rf" style="background:#b45309" style="width:41.4%"></div></div><div class="rn">4.8% · 严重度 1.92</div></div>
+<div class="row"><div class="rl">★逆境深塔怪物与关卡机制</div><div class="rt"><div class="rf" style="background:#b45309" style="width:34.5%"></div></div><div class="rn">4.0% · 严重度 3.45</div></div>
+<div class="row"><div class="rl">新手与回坑玩家的上手困惑</div><div class="rt"><div class="rf" style="width:31.0%"></div></div><div class="rn">3.6% · 严重度 3.56</div></div>
+<div class="row"><div class="rl">剧情与任务流程体验</div><div class="rt"><div class="rf" style="width:24.1%"></div></div><div class="rn">2.8% · 严重度 2.43</div></div></div>
+<div class="card"><h3>产品特异主题（仅一侧出现）</h3><table><tr><th>仅《原神》 主题</th><th>占比</th><th>严重度</th><th>仅《鸣潮》 主题</th><th>占比/严重度</th></tr><tr><td>自选五星活动的选择决策</td><td>3.6%</td><td>1.82</td><td>—</td><td>—</td></tr><tr><td>深渊11层镇石机制与怪物集火</td><td>3.6%</td><td>3.89</td><td>—</td><td>—</td></tr><tr><td>—</td><td>—</td><td>鸣潮特有-累充阶梯与付费定价争议</td><td>4.8%</td><td>1.92</td></tr><tr><td>—</td><td>—</td><td>鸣潮特有-逆境深塔怪物与关卡机制</td><td>4.0%</td><td>3.45</td></tr><tr><td>—</td><td>—</td><td>鸣潮特有-回归码拉新与评论区刷码</td><td>2.4%</td><td>1.67</td></tr><tr><td>—</td><td>—</td><td>鸣潮特有-抽卡与词条概率暗改质疑</td><td>2.4%</td><td>2.83</td></tr><tr><td>—</td><td>—</td><td>鸣潮特有-Bug与故障补偿</td><td>2.0%</td><td>3.60</td></tr></table></div>
+<h2><span class="n">05</span>声量-严重度错位（找「排期陷阱」）</h2>
+<p>错位度 = 按占比排名 − 按严重度排名。<b>正值越大＝声音大但没那么严重</b>；负值则是「没什么人说，但说了的人很在意」。下表为《鸣潮》。
+<div class="card"><table><tr><th>主题</th><th>占比排名</th><th>严重度排名</th><th>错位度</th></tr><tr><td>运营沟通与反馈采纳</td><td>19</td><td>1</td><td>+18</td></tr><tr><td>鸣潮特有-Bug与故障补偿</td><td>18</td><td>2</td><td>+16</td></tr><tr><td>奖励发放与投入/期望落差</td><td>20</td><td>7</td><td>+13</td></tr><tr><td>鸣潮特有-抽卡与词条概率暗改质疑</td><td>16</td><td>6</td><td>+10</td></tr><tr><td>新手与回坑玩家的上手困惑</td><td>11</td><td>3</td><td>+8</td></tr><tr><td>鸣潮特有-逆境深塔怪物与关卡机制</td><td>10</td><td>4</td><td>+6</td></tr><tr><td>深渊与高难副本的难度梯度/体系门槛</td><td>8</td><td>5</td><td>+3</td></tr><tr><td>剧情与任务流程体验</td><td>12</td><td>10</td><td>+2</td></tr><tr><td>移动端操作与设备适配</td><td>15</td><td>13</td><td>+2</td></tr><tr><td>美术建模与演出表现</td><td>17</td><td>19</td><td>-2</td></tr><tr><td>角色养成资源与时间成本</td><td>5</td><td>8</td><td>-3</td></tr><tr><td>大世界探索与跑图机动性</td><td>13</td><td>18</td><td>-5</td></tr><tr><td>鸣潮特有-回归码拉新与评论区刷码</td><td>14</td><td>20</td><td>-6</td></tr><tr><td>抽卡资源获取与卡池福利体验</td><td>2</td><td>9</td><td>-7</td></tr><tr><td>角色机制完整性与配队自由度</td><td>6</td><td>14</td><td>-8</td></tr><tr><td>鸣潮特有-累充阶梯与付费定价争议</td><td>9</td><td>17</td><td>-8</td></tr><tr><td>活动玩法设计与关卡体验</td><td>7</td><td>16</td><td>-9</td></tr><tr><td>社区氛围与玩家对立</td><td>3</td><td>12</td><td>-9</td></tr><tr><td>强度膨胀与版本平衡焦虑</td><td>1</td><td>11</td><td>-10</td></tr><tr><td>内容生态与攻略质量</td><td>4</td><td>15</td><td>-11</td></tr></table></div>
+<h2><span class="n">06</span>解读</h2><div class="finding"><h3>① 品类共性成立：15 个共有主题、严重度量级几乎一致</h3><p>两边同时出现的主题有 <b>15 个</b>（占各自主题体系的 88% / 75%），平均严重度几乎相同（<b>2.07 vs 2.08</b>），行为证据占比也在同一量级（12.2% vs 14.7%）。说明开放世界 RPG 的玩家诉求结构高度同构——强度、养成成本、高难门槛、抽卡福利、剧情、探索都是共通议题。<b>跨产品迁移运营经验的前提条件成立。</b></p></div>
+<div class="finding"><h3>② 稳健差异：原神的讨论被「强度与版本平衡」主导</h3><p>「强度膨胀与版本平衡焦虑」在原神占 <b>20.3%</b>、鸣潮 <b>11.7%</b>（差 −8.6pp）；「深渊/高难副本难度梯度」10.8% vs 4.8%（−5.9pp）；「新手与回坑困惑」8.8% vs 3.6%（−5.1pp）。原神每 5 名有效反馈用户就有 1 人谈强度与版本平衡。<b>这三条属稳健方向</b>：编码边界的偏差方向对它不利，真实差距只会更大（见 07 节）。</p></div>
+<div class="finding"><h3>③ 产品特异：鸣潮有一簇「信任类」主题，原神窗口内没有对应物</h3><p>鸣潮 5 个特有主题中，<b>3 个属付费与信任类</b>——累充阶梯与付费定价争议（4.8%）、抽卡与词条概率暗改质疑（2.4%）、Bug 与故障补偿（2.0%，严重度 3.60），合计约 <b>9.2%</b>；原神侧本窗口完全没有同类主题（其特异问题偏机制设计，如某一层副本的仇恨规则）。<b>同类产品之间，玩家「最不信任的东西」可能完全不同</b>——这是本次对比最有价值的发现。</p></div>
+<div class="finding"><h3>④ 排期陷阱两边都有，但性质不同</h3><p>错位度（按占比排名 − 按严重度排名）越大越容易被按声量排期的人漏掉。原神侧是<b>机制与设备</b>类：移动端操作与设备适配（+13，严重度 3.83）、深渊 11 层镇石机制（+11，3.89）。鸣潮侧是<b>信任与沟通</b>类：运营沟通与反馈采纳（+18，3.67）、Bug 与故障补偿（+16，3.60）、奖励发放落差（+13）、概率暗改质疑（+10，2.83）。<b>两家若都按声量排期，都会漏掉各自最尖锐的问题，而且漏掉的不是同一类。</b></p></div>
+<div class="finding"><h3>⑤ 最稳健的一条差异：鸣潮的「竞品参照系」话语占比是原神的 3 倍以上</h3><p>「其他游戏/跨游戏话题」：原神 <b>2.5%</b>（10 人）vs 鸣潮 <b>8.4%</b>（29 人），差 +5.8pp。鸣潮有相当比例的讨论是以竞品（原神/崩铁/米哈游）为参照系展开的。<b>为什么这条最可信</b>：两边都属非反馈类，<b>不受编码边界严格度差异影响</b>。与之呼应的是鸣潮「社区氛围与玩家对立」占比更高（11.3% vs 5.6%）——但该条受边界偏差影响，仅作方向性表述。</p></div>
+<div class="finding"><h3>⑥ 方法论：跨产品对比真正的难点是「主题边界」校准，不是数据获取</h3><p>本次发现：人工编码判定的非反馈占比为原神 36.7% / 鸣潮 28.5%，而<b>同一套机械探针</b>给出的估计是 <b>46.3% / 47.8%</b>——探针说两边噪声水平几乎相同。说明编码结论的差距<b>主要来自跨编码者严格度差异，而非社区真实差异</b>。因此本报告只采用「方向稳健且 |结构差| ≥ 5pp」的结论，并把这条偏差公开写进局限。<b>能让两份数据可比的是采集口径，能让两份结论可比的只有编码校准。</b></p></div>
+<h2><span class="n">07</span>这份对比不能证明什么</h2>
+<div class="warn"><ul><li>**绝对量不可比**：两游戏社区体量不同，本文只比主题<b>结构占比</b>，不比谁的抱怨更多。</li><li>**⚠️ 非反馈边界跨编码者严格度不一致（已披露）**：人工编码 36.7% / 28.5%，而同一套机械探针为 46.3% / 47.8%。探针认为两边噪声水平几乎相同 → 该差距主要来自编码严格度。<b>因此只采用方向稳健且 |结构差| ≥ 5pp 的差异；「鸣潮更高」的差异仅作方向性表述。</b></li><li>**⚠️ 样本并非完全独立**：两边逐字相同的评论有 25 条（占鸣潮 7.1%），源于 9 个被两边关键词同时命中的「跨游戏对比」类视频。已做敏感度检验：<b>两侧同时剔除后，五条关键差异全部保留且幅度略增</b>。</li><li>**匿名下每条视频只取约 3 条热门评论**，各社区热门偏好（玩梗/攻略/情绪）不同，会系统性影响分布。</li><li>**关键词热度差异**：某游戏专有词更出圈会带来更多样本，不代表该问题更严重。</li><li>**无游戏内数据**：严重度来自评论文本打分，不是通过率或留存。</li><li>**非本人游玩体验**：全部基于公开评论；鸣潮侧不做第一人称体验断言。</li><li>**单人编码、未做第二编码者信度检验**；**鸣潮侧未做分群分析**（segment 仅 4 行有值）。</li><li>**只对比了一款同类产品**，不能代表整个品类的规律。</li></ul></div>
+<footer><p><b>可复现</b>：采集脚本 <code>采集脚本/collect_bilibili.py</code>；原始数据 <code>原始数据/wuthering_waves_strict_20260801_20261006.csv</code>；锚定编码 <code>编码/observations_coded.csv</code>；对比表 <code>编码/对比结果.md</code>；独立复核 <code>质检/</code>。</p><p>本页数字由脚本在生成时直接从两边编码数据计算（非手抄），不依赖任何外部 CDN、图片或字体资源。</p><p>个人研究作品，不代表米哈游、库洛或任何官方立场。</p></footer></div></body></html>
