@@ -10,8 +10,12 @@ import csv
 import collections
 import os
 
-C = r"C:\Users\53656\Desktop\dsh简历\简历投递\米哈游_产品运营实习生-原神\作品集\作品集C_跨游戏反馈对比"
-CSV = os.path.join(C, r"原始数据\wuthering_waves_strict_20260801_20261006.csv")
+import argparse
+
+# 原始评论数据未随仓库提供；请用 --csv 指定自己的数据文件
+_ap = argparse.ArgumentParser(description="关键词探针量级核验")
+_ap.add_argument("--csv", required=True, help="原始评论 CSV（需含 用户编号 与 内容 列）")
+CSV = _ap.parse_args().csv
 
 PROBES = {
     "高难副本/逆境深塔": ["逆境深塔", "深塔", "全息", "难度", "通关", "满星", "下潜"],

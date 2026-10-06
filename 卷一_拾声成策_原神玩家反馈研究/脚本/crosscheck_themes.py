@@ -1,14 +1,19 @@
 # -*- coding: utf-8 -*-
 """
 独立交叉核验：用机械关键词共现，估算各主题的「去重用户数」量级。
-用途：当编码结果返回后，用它对照子代理报出的主题频次，识别数量级异常（防编造）。
+用途：主题编码完成后，用它对照各主题的去重用户数，识别数量级异常（防编造）。
 注意：这不是主题编码，只是量级探针；类目必须由编码步骤从数据浮现。
 """
 import csv
 import collections
 import os
 
-CSV = r"C:\Users\53656\Desktop\dsh简历\简历投递\米哈游_产品运营实习生-原神\作品集\作品集A_原神玩家反馈分析\原始数据\bilibili_windowed_20261006.csv"
+import argparse
+
+# 原始评论数据未随仓库提供；请用 --csv 指定自己的数据文件
+_ap = argparse.ArgumentParser(description="关键词探针量级核验")
+_ap.add_argument("--csv", required=True, help="原始评论 CSV（需含 用户编号 与 内容 列）")
+CSV = _ap.parse_args().csv
 
 PROBES = {
     "高难玩法/幽境危战": ["幽境", "危战", "N5", "N6", "难度5", "难度6", "老头", "冰棺", "冰锅", "丘林"],
